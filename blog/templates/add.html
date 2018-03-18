@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Blog -- Add a Post
+{% endblock %}
+
+{% block content %}
+<!-- rewrite in react -->
+
+    <section>
+        <h1>Add a new Post</h1>
+        <form action="" method="post">
+            <article>
+                <p>
+                    <input type="text" name="title"/>
+                </p>
+                <p>
+                    <div id='blog-body' type="text" name="body"/>
+                </p>
+                <p>
+                    <button type="submit">Submit</button>
+                </p>
+            </article>
+        </form>
+    </section>
+
+{% endblock %}
+
+{%block sidebar%}
+{%endblock%}

@@ -1,0 +1,22 @@
+<ul class="blogposts">
+    {% for blogpost in blogposts %}
+        <li>
+            <a class="header" href="/posts/{{ blogpost.id }}">
+                <h3 class="blogtitle">
+                    {{ blogpost.title|truncate(32, killwords=True) }}
+                </h3>
+            </a>
+            <span class="blogbody">
+                    {{ blogpost.body|truncate(128, killwords=True) }}
+            </span>     
+
+            <div class="info">
+                <br />
+
+                Add by <a href="#"></a>
+                {{ moment(blogpost.date).fromNow() }}.
+
+            </div>
+        </li>
+    {% endfor %}
+</ul>
