@@ -3,6 +3,17 @@ import ReactDOM from 'react-dom';
 import axios from 'axios';
 
 class DeleteButton extends React.Component{
+    constructor(props) {
+        super(props);
+
+        this.state = { };
+    }
+
+    componentDidMount(){
+        var id = document.getElementById('blog-id').innerText;
+        this.setState({location: "/posts/edit/" + id})
+    }
+
     handleClick(e){
         e.preventDefault();
         var id = document.getElementById('blog-id').innerText;
@@ -18,7 +29,9 @@ class DeleteButton extends React.Component{
 
     render() {
         return (
-            <a href="#" onClick={this.handleClick} >delete</a>
+            <div>
+                <a href={this.state.location} >edit</a> | <a href="#" onClick={this.handleClick} >delete</a>
+            </div>
         );
     }
 }
@@ -38,11 +51,12 @@ class BlogForm extends React.Component {
             console.log(res)
             this.setState(res.data);
             document.title = this.state.title;
-            if(document.getElementById('delete-div'))
+            var e = document.getElementById('authenticated-div')
+            if(e)
             {
                 ReactDOM.render(
                     <DeleteButton />,
-                    document.getElementById('delete-div')
+                    e
                 );
             }
         }).catch(err => {
