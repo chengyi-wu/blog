@@ -13,4 +13,4 @@ def add():
 
 @posts.route('/<int:id>')
 def view(id):
-    return render_template('empty.html', id=id)
+    return render_template('disp.html', id=id)

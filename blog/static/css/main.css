@@ -171,7 +171,17 @@ article.flashes {
     margin-bottom: 1em;
 }
 
+.blogtitle {
+    display: inline;
+}
 
+.blogbody {
+    
+}
+
+.info {
+    display: inline;
+}
 
 
 

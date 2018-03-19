@@ -6,13 +6,12 @@
                     {{ blogpost.title|truncate(32, killwords=True) }}
                 </h3>
             </a>
-            <span class="blogbody">
-                    {{ blogpost.body|truncate(128, killwords=True) }}
-            </span>     
+            <div class="blogbody">
+                    {{ blogpost.body|truncate(128, killwords=True)|safe }}
+            </div>     
 
             <div class="info">
                 <br />
-
                 Add by <a href="#"></a>
                 {{ moment(blogpost.date).fromNow() }}.
 

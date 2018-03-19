@@ -5,24 +5,17 @@
 {% endblock %}
 
 {% block content %}
-<!-- rewrite in react -->
-
+    <style>
+        .title-toolbar{
+            display: none;
+        }
+    </style>
     <section>
-        <h1>Add a new Post</h1>
-        <form action="" method="post">
-            <article>
-                <p>
-                    <input type="text" name="title"/>
-                </p>
-                <p>
-                    <div id='blog-body' type="text" name="body"/>
-                </p>
-                <p>
-                    <button type="submit">Submit</button>
-                </p>
-            </article>
-        </form>
+        <h2 style="clear:both">Add a new Post</h2>
+        <span id='blog-form' />
     </section>
+
+    <script src="../static/dist/add.js"></script>
 
 {% endblock %}
 

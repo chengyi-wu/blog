@@ -25,8 +25,20 @@ def get_posts(id):
         })
     abort(404)
 
-@api.route('/posts', methods=['POST'])
+@api.route('/posts/add', methods=['POST'])
 def add_post():
+    u = User.query.get(1)
+    data = request.json
+    p = BlogPost(user=u, title=data['title'], body=data['body'])
+    db.session.add(p)
+    db.session.flush()
+    db.session.commit()
+    print(p.id)
+    return str(p.id)
+
+
+@api.route('/posts/delete', methods=['DELETE'])
+def delete_post():
     return json.jsonify(request.json)
 
 
