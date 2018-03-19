@@ -171,7 +171,16 @@ article.flashes {
     margin-bottom: 1em;
 }
 
-ul.blogtitle {
+.blogposts{
+    display: inline;
+}
+
+.blogposts a{
+    text-decoration: none;
+}
+
+.blogtitle {
+    display: inline;
     list-style: none none;
     padding-left: 0;
 }
