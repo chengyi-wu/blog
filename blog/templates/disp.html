@@ -10,6 +10,10 @@
     <section id="BlogPost">
        <!-- React Mount-->
     </section>
+    {% if current_user.is_authenticated %}
+    <article id="delete-div"></article>
+    {% endif %}
+
 
     <script src="../static/dist/disp.js"></script>
 
