@@ -12,9 +12,11 @@ class DevConfig(Config):
     SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(basedir, 'data-dev.db')
     SQLALCHEMY_TRACK_MODIFICATIONS = False
 
+class ProdConfig(DevConfig):
+    DEBUG = False
+
 
 config_by_name = {
-    "dev" : DevConfig
+    "dev" : DevConfig,
+    "prod" : ProdConfig
 }
-
-WEBPACK_MANIFEST_PATH = basedir + '/manifest.json'
