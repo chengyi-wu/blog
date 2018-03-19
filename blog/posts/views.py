@@ -5,6 +5,10 @@ from blog import login_manager, db
 
 from . import posts
 
+@posts.route('/')
+def index():
+    return redirect(url_for("main.index"))
+
 # Use JSON + RESTful
 @posts.route('/add')
 @login_required

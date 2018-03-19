@@ -10,7 +10,7 @@ def load_user(userid):
 @main.route('/')
 @main.route('/index')
 def index():
-    return render_template('index.html', new_blogposts=BlogPost.newest(5))
+    return render_template('index.html', new_blogposts=BlogPost.newest(3))
 
 @main.route('/aboutme')
 def aboutme():

@@ -28,7 +28,8 @@ class BlogTitleEditor extends Component {
 
   render () {
     return (
-      <RichTextEditor toolbarClassName="title-toolbar" placeholder={this.state.placeholder}
+      <RichTextEditor toolbarClassName="title-toolbar"
+        placeholder={this.state.placeholder}
         value={this.state.value}
         onChange={this.onChange}
       />
@@ -42,7 +43,8 @@ class BlogBodyEditor extends Component {
   };
 
   state = {
-    value: RichTextEditor.createEmptyValue()
+    value: RichTextEditor.createEmptyValue(),
+    placeholder: "What's up?"
   }
 
   onChange = (value) => {
@@ -59,7 +61,8 @@ class BlogBodyEditor extends Component {
 
   render () {
     return (
-      <RichTextEditor
+      <RichTextEditor className="editor-class" 
+        placeholder={this.state.placeholder}
         value={this.state.value}
         onChange={this.onChange}
       />
@@ -70,7 +73,10 @@ class BlogBodyEditor extends Component {
 class BlogForm extends React.Component {
   constructor(props){
     super(props);
-    this.state = { title:'', body:''};
+    this.state = { 
+      title:'', 
+      body:''
+    };
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleTitleChange = this.handleTitleChange.bind(this);
@@ -79,7 +85,7 @@ class BlogForm extends React.Component {
   
   handleTitleChange(event) {
     //console.log(event.target.value);
-    this.setState({title : event });
+    this.setState({title : event.trim() });
   }
 
   handleBodyChange(event) {
@@ -91,6 +97,11 @@ class BlogForm extends React.Component {
   handleSubmit(event) {
     //alert('A name was submitted: ' + this.state.title + this.state.body.toString('html'));
     event.preventDefault();
+    
+    if(this.state.title.length == 0 ||
+      this.state.body.toString("markdown").trim().length == 0)
+      return;
+    
     axios.post('/api/posts/add', {
       'title' : this.state.title,
       'body' : this.state.body.toString('html')
@@ -117,7 +128,7 @@ class BlogForm extends React.Component {
           <p />
           <BlogBodyEditor value={this.state.body} onChange={this.handleBodyChange} />
           <p>
-            <input type="submit" value="Submit" />
+            <input className="submit-button" type="submit" value="Submit" />
           </p>
         </article>
       </form>

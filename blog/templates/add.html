@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block title %}
-    Blog -- Add a Post
+    New Post
 {% endblock %}
 
 {% block content %}
@@ -9,9 +9,21 @@
         .title-toolbar{
             display: none;
         }
+        .editor-class {
+            min-height: 500px;
+            border: none;
+        }
+        .submit-button{
+            font-family: Georgia,serif;
+            float: right;
+            border-color: #ccc;
+            border-radius: 36px;
+            padding: 10px 30px;
+            -webkit-border-radius: 36px;
+        }
     </style>
     <section>
-        <h2 style="clear:both">Add a new Post</h2>
+        <!-- <h2 style="clear:both">Add a new Post</h2> -->
         <span id='blog-form' />
     </section>
 

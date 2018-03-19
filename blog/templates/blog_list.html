@@ -11,10 +11,7 @@
             </div>     
 
             <div class="info">
-                <br />
-                Add by <a href="#"></a>
-                {{ moment(blogpost.date).fromNow() }}.
-
+                Add {{ moment(blogpost.date).fromNow() }}.
             </div>
         </li>
     {% endfor %}

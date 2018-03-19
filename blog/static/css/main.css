@@ -57,7 +57,7 @@ textarea {
    ========================================================================== */
 
 body {
-    font: 16px/26px Helvetica, Helvetica Neue, Arial;
+    font: 16px/26px Georgia, Helvetica, Helvetica Neue, Arial;
 }
 
 .wrapper {
@@ -171,16 +171,24 @@ article.flashes {
     margin-bottom: 1em;
 }
 
-.blogtitle {
-    display: inline;
+ul.blogtitle {
+    list-style: none none;
+    padding-left: 0;
 }
 
-.blogbody {
-    
+div.blogbody {
+    color: #666666;
+    border-top: 1px solid #7EA6BF;
+    display: block;
 }
 
-.info {
-    display: inline;
+div.blogbody.p {
+    padding: 0 0 0 0;
+}
+
+div.info {
+    font-size: .75em;
+    color: #666666;
 }
 
 
