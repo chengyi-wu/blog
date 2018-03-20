@@ -1,8 +1,9 @@
 from flask_script import Manager, prompt_bool
 from blog import db, create_app
 from blog.models import User, BlogPost
+import os
 
-app = create_app('prod')
+app = create_app(os.environ.get("BUILD_FLAVOR") or 'dev')
 manager = Manager(app)
 
 @manager.command
