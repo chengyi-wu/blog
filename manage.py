@@ -2,7 +2,7 @@ from flask_script import Manager, prompt_bool
 from blog import db, create_app
 from blog.models import User, BlogPost
 
-app = create_app('dev')
+app = create_app('prod')
 manager = Manager(app)
 
 @manager.command
