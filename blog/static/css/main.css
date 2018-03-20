@@ -216,7 +216,18 @@ div.info {
     -webkit-border-radius: 36px;
 }
 
+.footer-container h4{
+    font-family: Arial;
+}
 
+.main-container {
+    min-height: 600px;
+}
+
+.main-blogblog {
+    min-height: 300px;
+    display: block;
+}
 
 
 

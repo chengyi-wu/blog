@@ -10,11 +10,11 @@ def load_user(userid):
 @main.route('/')
 @main.route('/index')
 def index():
-    return render_template('index.html', new_blogposts=BlogPost.newest(3))
+    return render_template('index.html', new_blogposts=BlogPost.newest(3), blog_title="Chengyi's Blog")
 
 @main.route('/aboutme')
 def aboutme():
-    return "<h1>TODO:ABOUT ME</h1>"
+    return redirect("https://www.linkedin.com/in/chengyi-wu/")
 
 @main.app_errorhandler(404)
 def page_not_found(e):
