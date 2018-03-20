@@ -15,6 +15,12 @@ def index():
 def add():
     return render_template('add.html')
 
+@posts.route('/edit')
+@login_required
+def edit():
+    id = int(request.args.get('id'))
+    return render_template('edit.html', id=id)
+
 @posts.route('/<int:id>')
 def view(id):
     return render_template('disp.html', id=id)

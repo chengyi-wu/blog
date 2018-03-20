@@ -11,7 +11,7 @@ class DeleteButton extends React.Component{
 
     componentDidMount(){
         var id = document.getElementById('blog-id').innerText;
-        this.setState({location: "/posts/edit/" + id})
+        this.setState({location: "/posts/edit?id=" + id})
     }
 
     handleClick(e){

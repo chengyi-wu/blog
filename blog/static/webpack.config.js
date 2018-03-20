@@ -5,6 +5,7 @@ const config = {
     entry : {
         add : __dirname + '/js/add.jsx',
         disp : __dirname + '/js/disp.jsx',
+        edit: __dirname + '/js/edit.jsx'
     },
     output : {
         path : __dirname + '/dist',

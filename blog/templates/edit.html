@@ -1,16 +1,18 @@
 {% extends "base.html" %}
 
 {% block title %}
-    New Post
+    Edit Post
 {% endblock %}
 
 {% block content %}
+
+    <div id="blog-id" style="display:none;">{{ id }}</div>
     <section>
         <!-- <h2 style="clear:both">Add a new Post</h2> -->
         <span id='blog-form' />
     </section>
 
-    <script src="../static/dist/add.js"></script>
+    <script src="../static/dist/edit.js"></script>
 
 {% endblock %}
 

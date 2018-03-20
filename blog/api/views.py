@@ -37,6 +37,30 @@ def add_post():
     #print(p.id)
     return str(p.id)
 
+@api.route('/posts/edit/<int:id>', methods=['POST'])
+@login_required
+def edit_post(id):
+    p = BlogPost.query.get(id)
+    if p is None:
+        abort(404)
+    data = request.json
+    p.title=data['title']
+    p.body=data['body']
+    db.session.commit()
+    p = BlogPost.query.get(id)
+    #print(p.id)
+    return json.jsonify({
+            'id' : p.id,
+            'title' : p.title,
+            'body' : p.body,
+            'user' : {
+                'id' : p.user.id,
+                'username' : p.user.username
+            },
+            'date' : p.date,
+        })
+
+
 
 @api.route('/posts/delete/<int:id>', methods=['DELETE'])
 @login_required
