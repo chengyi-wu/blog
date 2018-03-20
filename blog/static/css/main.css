@@ -216,16 +216,24 @@ div.info {
     -webkit-border-radius: 36px;
 }
 
-.footer-container h4{
+.footer-container div{
     font-family: Arial;
+    font-size: 12px;
+}
+
+.footer-container a{
+    font-family: Arial;
+    font-size: 12px;
+    text-decoration: none;
+    color: white;
 }
 
 .main-container {
-    min-height: 600px;
+    min-height: 800px;
 }
 
 .main-blogblog {
-    min-height: 300px;
+    min-height: 600px;
     display: block;
 }
 
