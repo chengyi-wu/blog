@@ -79,9 +79,12 @@ body {
 }
 
 .header-container,
-.footer-container,
-.main aside {
+.footer-container
+{
     background: #f16529;
+}
+.main aside {
+    background: transparent;
 }
 
 .title {
