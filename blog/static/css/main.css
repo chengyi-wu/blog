@@ -134,7 +134,7 @@ nav a:hover {
 
 .main aside {
     color: white;
-    padding: 0px 5% 10px;
+    /* padding: 0px 5% 10px; */
 }
 
 .footer-container footer {
@@ -320,7 +320,7 @@ div.info {
 
     .main aside {
         float: right;
-        width: 23%;
+        width: 33%;
     }
 }
 
