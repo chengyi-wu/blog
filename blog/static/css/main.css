@@ -324,7 +324,7 @@ div.info {
 
     .main aside {
         float: right;
-        width: 33%;
+        width: fit-content;
     }
 }
 
