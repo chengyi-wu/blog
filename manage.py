@@ -9,17 +9,6 @@ manager = Manager(app)
 @manager.command
 def initdb():
     db.create_all()
-    db.session.add(User(username="chenwu", password="Password01!"))
-    
-    db.session.commit()
-
-    u = User.query.get(1)
-
-    for s in ["test", "another one", "some more"]:
-        db.session.add(BlogPost(user=u, title=s, body=s))
-
-    db.session.commit()
-
     print("Initialize database")
 
 @manager.command
