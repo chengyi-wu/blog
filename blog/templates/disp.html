@@ -6,10 +6,10 @@
 
 {% block content %}
 
-    <div id="blog-id" style="display:none;">{{ id }}</div>
-    <section id="BlogPost">
+    <article id="BlogPost">
        <!-- React Mount-->
-    </section>
+    </article>
+    <div id="blog-id" style="display:none;">{{ id }}</div>
     {% if current_user.is_authenticated %}
     <article id="authenticated-div"></article>
     {% endif %}
@@ -18,3 +18,5 @@
     <script src="../static/dist/disp.js"></script>
 
 {% endblock %}
+
+

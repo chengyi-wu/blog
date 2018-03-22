@@ -72,7 +72,7 @@ class BlogForm extends React.Component {
         return (
             <article>
                 <h3>{this.state.title}</h3>
-                <div className="main-blogblog" dangerouslySetInnerHTML={ {__html: this.state.body}} />
+                <div className="main-blogbody" dangerouslySetInnerHTML={ {__html: this.state.body}} />
                 <div className="info">
                     {this.state.date}
                 </div>
